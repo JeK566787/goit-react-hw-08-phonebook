@@ -1,10 +1,14 @@
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { logOut } from 'redux/auth/operations';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleClick = () => {
     dispatch(logOut());
+    navigate('/');
   };
 
   return (

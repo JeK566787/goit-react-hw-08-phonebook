@@ -16,6 +16,7 @@ const ContactPage = () => {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectLoading);
   const error = useSelector(selectError);
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   const dispatch = useDispatch();
 
@@ -24,21 +25,25 @@ const ContactPage = () => {
   }, [dispatch]);
 
   return (
-    <Container>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      {contacts.length > 0 ? (
-        <>
-          <h2>Contacts</h2>
-          <Filter />
-          <ContactsList />
-        </>
-      ) : (
-        <Message>Contacts list is empty yet</Message>
+    <>
+      {isLoggedIn && (
+        <Container>
+          <h1>Phonebook</h1>
+          <ContactForm />
+          {contacts.length > 0 ? (
+            <>
+              <h2>Contacts</h2>
+              <Filter />
+              <ContactsList />
+            </>
+          ) : (
+            <Message>Contacts list is empty yet</Message>
+          )}
+          {isLoading && <Loader />}
+          {error && <h1>{error}</h1>}
+        </Container>
       )}
-      {isLoading && <Loader />}
-      {error && <h1>{error}</h1>}
-    </Container>
+    </>
   );
 };
 

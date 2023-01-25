@@ -29,9 +29,9 @@ const routes = [
 
 const Layout = () => {
   const isLoading = useSelector(selectLoading);
-  console.log(isLoading);
+
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-  console.log(isLoggedIn);
+
   return (
     <>
       <header>
@@ -54,9 +54,11 @@ const Layout = () => {
               <li>
                 <Link to="/login">LOGIN</Link>
               </li>
-              <li>
-                <Link to="/contacts">CONTACTS</Link>
-              </li> */}
+              {isLoggedIn && (
+                <li>
+                  <Link to="/contacts">CONTACTS</Link>
+                </li>
+              )} */}
             </ul>
           </nav>
         </div>

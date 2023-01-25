@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 
 const LoginForm = () => {
@@ -7,6 +8,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -21,6 +23,7 @@ const LoginForm = () => {
 
     setEmail('');
     setPassword('');
+    navigate('/contacts');
   };
 
   return (
