@@ -62,7 +62,7 @@ const Layout = () => {
             </ul>
           </nav>
         </div>
-        <UserMenu />
+        {isLoggedIn && <UserMenu />}
       </header>
       <main>
         <Outlet />
