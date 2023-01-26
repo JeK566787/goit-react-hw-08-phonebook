@@ -38,14 +38,14 @@ const Layout = () => {
         <div>
           <nav>
             <ul>
-              {routes.map(({ label, path, privatePath }) => {
+              {/* {routes.map(({ label, path, privatePath }) => {
                 return privatePath === isLoggedIn ? (
                   <li key={path}>
                     <Link to={path}>{label}</Link>
                   </li>
                 ) : null;
-              })}
-              {/* <li>
+              })} */}
+              <li>
                 <Link to="/">HOME</Link>
               </li>
               <li>
@@ -56,9 +56,9 @@ const Layout = () => {
               </li>
               {isLoggedIn && (
                 <li>
-                  <Link to="/contacts">CONTACTS</Link>
+                  <Link to="contacts">CONTACTS</Link>
                 </li>
-              )} */}
+              )}
             </ul>
           </nav>
         </div>
