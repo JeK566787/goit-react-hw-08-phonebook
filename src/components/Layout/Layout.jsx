@@ -2,14 +2,15 @@ import Loader from 'components/Loader/Loader';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
+import { selectAuthLoading } from 'redux/auth/selectors';
 import { selectLoading } from 'redux/contacts/selectors';
 
 const routes = [
-  {
-    label: 'Home',
-    path: '/',
-    privatePath: false,
-  },
+  // {
+  //   label: 'Home',
+  //   path: '/',
+  //   privatePath: true,
+  // },
   {
     label: 'Register',
     path: '/register',
@@ -28,7 +29,7 @@ const routes = [
 ];
 
 const Layout = () => {
-  const isLoading = useSelector(selectLoading);
+  const authLoading = useSelector(selectAuthLoading);
 
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
@@ -38,16 +39,17 @@ const Layout = () => {
         <div>
           <nav>
             <ul>
-              {/* {routes.map(({ label, path, privatePath }) => {
+              <li>
+                <Link to="/">HOME</Link>
+              </li>
+              {routes.map(({ label, path, privatePath }) => {
                 return privatePath === isLoggedIn ? (
                   <li key={path}>
                     <Link to={path}>{label}</Link>
                   </li>
                 ) : null;
-              })} */}
-              <li>
-                <Link to="/">HOME</Link>
-              </li>
+              })}
+              {/*
               <li>
                 <Link to="/register">REGISTER</Link>
               </li>
@@ -58,7 +60,7 @@ const Layout = () => {
                 <li>
                   <Link to="contacts">CONTACTS</Link>
                 </li>
-              )}
+              )} */}
             </ul>
           </nav>
         </div>
@@ -67,7 +69,7 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
-      {isLoading && <Loader />}
+      {authLoading && <Loader />}
     </>
   );
 };
