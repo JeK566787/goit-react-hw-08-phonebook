@@ -32,7 +32,7 @@ const ContactPage = () => {
           <ContactForm />
           {contacts.length > 0 ? (
             <>
-              <h2>Contacts</h2>
+              {/* <h2>Contacts</h2> */}
               <Filter />
               <ContactsList />
             </>

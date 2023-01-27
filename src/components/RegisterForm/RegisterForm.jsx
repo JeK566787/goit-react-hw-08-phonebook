@@ -1,3 +1,4 @@
+import { Button, Input } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
@@ -28,8 +29,15 @@ const RegisterForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        <span>name</span>
-        <input
+        {/* <span>name</span> */}
+        <Input
+          p="5"
+          borderColor="lime"
+          _placeholder={{ opacity: 1, color: 'gray.500' }}
+          focusBorderColor="lime"
+          variant="flushed"
+          mt="50px"
+          placeholder="Write your name"
           name="name"
           type="text"
           required
@@ -38,8 +46,16 @@ const RegisterForm = () => {
         />
       </label>
       <label>
-        <span>email</span>
-        <input
+        {/* <span>email</span> */}
+        <Input
+          p="5"
+          layerStyle="input"
+          borderColor="lime"
+          _placeholder={{ opacity: 1, color: 'gray.500' }}
+          variant="flushed"
+          focusBorderColor="lime"
+          mt="10px"
+          placeholder="Write your email"
           name="email"
           type="email"
           required
@@ -48,8 +64,16 @@ const RegisterForm = () => {
         />
       </label>
       <label>
-        <span>password</span>
-        <input
+        {/* <span>password</span> */}
+        <Input
+          p="5"
+          layerStyle="input"
+          borderColor="lime"
+          _placeholder={{ opacity: 1, color: 'gray.500' }}
+          variant="flushed"
+          focusBorderColor="lime"
+          mt="10px"
+          placeholder="Write your password"
           name="password"
           type="password"
           required
@@ -58,7 +82,10 @@ const RegisterForm = () => {
           minLength={8}
         />
       </label>
-      <button typy="sumbmit">REGISTER</button>
+      <Button mt="15px" colorScheme="teal" variant="outline" typy="sumbmit">
+        REGISTER
+        {/* <button typy="sumbmit">REGISTER</button> */}
+      </Button>
     </form>
   );
 };

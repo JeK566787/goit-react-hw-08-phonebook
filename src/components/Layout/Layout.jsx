@@ -1,9 +1,9 @@
 import Loader from 'components/Loader/Loader';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { selectAuthLoading } from 'redux/auth/selectors';
-import { Box, Container, Flex, Spacer } from '@chakra-ui/react';
+import { Box, Container, Flex, Spacer, Link } from '@chakra-ui/react';
 
 const routes = [
   // {
@@ -12,17 +12,17 @@ const routes = [
   //   privatePath: true,
   // },
   {
-    label: 'Register',
+    label: 'REGISTER',
     path: '/register',
     privatePath: false,
   },
   {
-    label: 'Login',
+    label: 'LOGIN',
     path: '/login',
     privatePath: false,
   },
   {
-    label: 'Contacts',
+    label: 'CONTACTS',
     path: '/contacts',
     privatePath: true,
   },
@@ -36,7 +36,7 @@ const Layout = () => {
   return (
     <Box
       w="100%"
-      minH="1000px"
+      minH="630px"
       bgGradient="linear-gradient(#8ced7d 0%, #c8fece 25%, #d2febf 50%)"
     >
       <Container maxW="container.sm" pt="20px">
@@ -47,13 +47,17 @@ const Layout = () => {
                 <ul>
                   <Flex>
                     <li>
-                      <Link to="/">HOME</Link>
+                      <Link textStyle="a" color="teal.500">
+                        <NavLink to="/">HOME</NavLink>
+                      </Link>
                     </li>
                     <Spacer />
                     {routes.map(({ label, path, privatePath }) => {
                       return privatePath === isLoggedIn ? (
                         <li key={path}>
-                          <Link to={path}>{label}</Link>
+                          <Link textStyle="a" color="teal.500" ml="15px">
+                            <NavLink to={path}>{label}</NavLink>
+                          </Link>
                         </li>
                       ) : null;
                     })}

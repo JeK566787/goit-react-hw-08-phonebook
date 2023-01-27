@@ -16,8 +16,8 @@ export const Input = styled.input`
   border: none;
   border-bottom: 1px solid black;
   outline: none;
-  background: #b7ff57;
+  background: #a0f399;
   &:focus {
-    background: #e6ffc4;
+    background: #e6fffa;
   }
 `;

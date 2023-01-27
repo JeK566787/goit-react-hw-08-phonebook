@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { logOut } from 'redux/auth/operations';
 
 const initialState = {
   filter: '',
@@ -15,6 +16,12 @@ const filterSlice = createSlice({
       state.filter = action.payload;
     },
   },
+  extraReducers: builder =>
+    builder
+      // logout
+      .addCase(logOut.fulfilled, state => {
+        state.filter = '';
+      }),
 });
 
 // Генераторы экшенов

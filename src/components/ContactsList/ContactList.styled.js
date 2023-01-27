@@ -8,7 +8,7 @@ export const Ul = styled.ul`
   flex-direction: column;
   gap: 10px;
   border-radius: 20px;
-  background: #b7ff57;
+  background: #a0f399;
 `;
 
 export const Btn = styled.button`

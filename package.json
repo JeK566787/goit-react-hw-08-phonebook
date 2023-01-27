@@ -5,8 +5,11 @@
   "homepage": "https://JeK566787.github.io/goit-react-hw-08-phonebook/",
   "dependencies": {
     "@chakra-ui/react": "^2.4.9",
+    "@chakra-ui/theme": "^2.2.5",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fontsource/open-sans": "^4.5.14",
+    "@fontsource/raleway": "^4.5.12",
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
