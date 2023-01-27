@@ -1,0 +1,18 @@
+.linkItem > a {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-size: 21px;
+  color: teal;
+
+  /* /* fontSize: ['11px', '21px'],
+      fontWeight: '300',
+      lineHeight: '100%', */
+}
+
+.linkItem:hover > a {
+  text-decoration: underline;
+}
+
+.linkItem:nth-child(3) {
+  margin-right: 15px;
+}

@@ -3,7 +3,8 @@ import UserMenu from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
 import { NavLink, Outlet } from 'react-router-dom';
 import { selectAuthLoading } from 'redux/auth/selectors';
-import { Box, Container, Flex, Spacer, Link } from '@chakra-ui/react';
+import { Box, Container, Flex, Spacer } from '@chakra-ui/react';
+import css from './Layout.module.css';
 
 const routes = [
   // {
@@ -46,18 +47,20 @@ const Layout = () => {
               <nav>
                 <ul>
                   <Flex>
-                    <li>
-                      <Link textStyle="a" color="teal.500">
-                        <NavLink to="/">HOME</NavLink>
-                      </Link>
+                    <li className={css.linkItem}>
+                      {/* <Link textStyle="a" color="teal.500"> */}
+                      <NavLink to="/">HOME</NavLink>
+                      {/* </Link> */}
                     </li>
                     <Spacer />
                     {routes.map(({ label, path, privatePath }) => {
                       return privatePath === isLoggedIn ? (
-                        <li key={path}>
-                          <Link textStyle="a" color="teal.500" ml="15px">
-                            <NavLink to={path}>{label}</NavLink>
-                          </Link>
+                        <li key={path} className={css.linkItem}>
+                          {/* <Link textStyle="a" color="teal.500" ml="15px"> */}
+                          <NavLink className={css.linkItem} to={path}>
+                            {label}
+                          </NavLink>
+                          {/* </Link> */}
                         </li>
                       ) : null;
                     })}
