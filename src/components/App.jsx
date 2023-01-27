@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import NotFoundPage from 'pages/NotFoundPage';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -44,6 +45,8 @@ export const App = () => {
             <PrivateRoute redirectTo="/login" component={<ContactPage />} />
           }
         />
+
+        <Route path="*" element={<NotFoundPage />} />
         {/* <Route path="contacts" element={<ContactPage />} /> */}
       </Route>
     </Routes>

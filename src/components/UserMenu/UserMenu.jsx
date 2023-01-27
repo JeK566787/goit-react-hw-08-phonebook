@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { logOut } from 'redux/auth/operations';
 import { selectUserEmail, selectUserName } from 'redux/auth/selectors';
 
+import { Center, Flex, Button } from '@chakra-ui/react';
+
 const UserMenu = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -16,13 +18,18 @@ const UserMenu = () => {
   };
 
   return (
-    <div>
-      <p>{userName}</p>
-      <p>{userEmail}</p>
-      <button type="button" onClick={handleClick}>
-        LOG OUT
-      </button>
-    </div>
+    <Center mt="30px">
+      <Flex flexDirection="column">
+        <p>Hello {userName}</p>
+
+        <p>Your email: {userEmail}</p>
+        <Button colorScheme="teal" variant="outline">
+          <button type="button" onClick={handleClick}>
+            LOG OUT
+          </button>
+        </Button>
+      </Flex>
+    </Center>
   );
 };
 
