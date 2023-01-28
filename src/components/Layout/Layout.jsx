@@ -5,9 +5,9 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { selectAuthLoading } from 'redux/auth/selectors';
 import { Box, Container, Flex, Spacer } from '@chakra-ui/react';
 import css from './Layout.module.css';
+import { Suspense } from 'react';
 
 const routes = [
-  
   {
     label: 'REGISTER',
     path: '/register',
@@ -81,7 +81,9 @@ const Layout = () => {
           </header>
 
           <main>
-            <Outlet />
+            <Suspense fallback={null}>
+              <Outlet />
+            </Suspense>
           </main>
 
           {authLoading && <Loader />}
