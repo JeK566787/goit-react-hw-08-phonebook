@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { logOut } from 'redux/auth/operations';
 import { selectUserEmail, selectUserName } from 'redux/auth/selectors';
 
-import { Center, Flex, Button, Stack, Spacer, Box } from '@chakra-ui/react';
+import { Button, Box } from '@chakra-ui/react';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
