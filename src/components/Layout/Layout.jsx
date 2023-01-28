@@ -7,11 +7,7 @@ import { Box, Container, Flex, Spacer } from '@chakra-ui/react';
 import css from './Layout.module.css';
 
 const routes = [
-  // {
-  //   label: 'Home',
-  //   path: '/',
-  //   privatePath: true,
-  // },
+  
   {
     label: 'REGISTER',
     path: '/register',
