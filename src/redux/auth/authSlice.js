@@ -35,7 +35,7 @@ const authSlice = createSlice({
       })
       .addCase(logIn.fulfilled, (state, { payload }) => {
         state.user = payload.user;
-        console.log(payload.user);
+        // console.log(payload.user);
         state.isLoggedIn = true;
         state.error = null;
         state.isLoading = false;
